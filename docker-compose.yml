@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - OOLIO_CLIENT_ID=${OOLIO_CLIENT_ID}
+      - OOLIO_CLIENT_SECRET=${OOLIO_CLIENT_SECRET}
+      - OOLIO_REDIRECT_URI=${OOLIO_REDIRECT_URI:-http://localhost:3000/callback}
+      - SESSION_SECRET=${SESSION_SECRET:-oolio-developer-example-secret}
+    volumes:
+      - ./.env:/app/.env

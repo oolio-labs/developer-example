@@ -1,0 +1,14 @@
+{
+  "name": "oolio-developer-example",
+  "version": "1.0.0",
+  "description": "Oolio Developer platform example",
+  "scripts": {
+    "build": "bun run -F client -F server build"
+  },
+  "keywords": [],
+  "author": "Shidil Eringa",
+  "workspaces": [
+    "client",
+    "server"
+  ]
+}
