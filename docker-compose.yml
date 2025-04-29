@@ -14,3 +14,7 @@ services:
       - SESSION_SECRET=${SESSION_SECRET:-oolio-developer-example-secret}
     volumes:
       - ./.env:/app/.env
+    develop:
+      watch:
+        - action: rebuild
+          path: .
