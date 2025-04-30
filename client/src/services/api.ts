@@ -72,3 +72,21 @@ export const getUserData = async (): Promise<any> => {
     throw error;
   }
 };
+
+// Get organization locations from Oolio API
+export const getLocations = async (): Promise<any> => {
+  try {
+    const response = await fetch(`${API_URL}/api/locations`, {
+      credentials: "include",
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to get locations: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error getting locations:", error);
+    throw error;
+  }
+};

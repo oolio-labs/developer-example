@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getAuthStatus } from "./services/api";
 import ConnectButton from "./components/ConnectButton";
 import UserData from "./components/UserData";
+import UserLocations from "./components/UserLocations";
 import { AuthStatus } from "./types";
 import "./App.css";
 
@@ -55,7 +56,10 @@ function App() {
 
       <main className="app-main">
         {authStatus?.authenticated ? (
-          <UserData onDisconnect={handleDisconnect} />
+          <div className="user-data-container">
+            <UserData onDisconnect={handleDisconnect} />
+            <UserLocations />
+          </div>
         ) : (
           <div className="connect-container">
             <h2>Connect to Oolio API</h2>
