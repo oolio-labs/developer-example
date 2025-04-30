@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { db } from "../models/db";
 import { refreshAccessToken } from "./authController";
-import fetch from "node-fetch";
 
 // Get user data from Oolio API
 export const getUserData = async (_: Request, res: Response,): Promise<void> => {
